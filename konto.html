@@ -3,49 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shosie - Kvalitetssko for enhver anledning</title>
+    <title>Min Profil - Shosie</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
     <header class="header">
-        <div class="info-icons">
-            <i class="fas fa-check-circle" aria-hidden="true"></i>
-            <span>Retur i butikk</span>
-            <i class="fas fa-shoe-prints" aria-hidden="true"></i>
-            <span>Sikker Belastning</span>
+        <div class="logo">
+            <a href="index.html">Shosie</a>
         </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="product.html">Products</a>
-            <a href="konto.html">Login</a>
-            <a href="analyse.html">Analysis</a>
+            <a href="index.html">Hjem</a>
+            <a href="product.html">Produkter</a>
+            <a href="konto.html">Konto</a>
         </nav>
         <div class="search-bar">
-            <input type="search" name="query" placeholder="Search...">
+            <input type="search" name="query" placeholder="Søk...">
             <button type="submit"><i class="fa fa-search"></i></button>
         </div>
     </header>
-    <main>
-        <h1>Shosie</h1>
-        <section class="product-links">
-            <h2>Our Products</h2>
-            <a href="product.html">adidas</a>
-            <a href="product.html">dame sko</a>
-            <a href="product.html">herre sko</a>
-            <a href="product.html">nike</a>
-        </section>
-        <section class="featured-products">
-            <h2>Featured Products</h2>
-            <article>
-                <h3><a href="product.html">Kjøp Nå</a></h3>
-                <img src="img/feet-1840619_1280.jpg" alt="Person wearing Nike sneakers, walking on a path">
-                <a href="https://pixabay.com/photos/feet-footwear-nike-shoes-sneakers-1840619/">Bilde fra pixabay</a>
-            </article>
+    <main id="main">
+        <section class="profile">
+            <i class="fas fa-user"></i>
+            <h1 id="greeting">Hei, Sarah Hansen</h1>
+            <form id="profile-form" onsubmit="updateProfile(); return false;">
+                <fieldset>
+                    <legend>Personlig informasjon</legend>
+                    
+                    <label for="name">Navn:</label>
+                    <input type="text" id="name" name="name" value="Sarah" required>
+                    
+                    <label for="surname">Etternavn:</label>
+                    <input type="text" id="surname" name="surname" value="Hansen" required>
+                    
+                    <label for="address">Adresse:</label>
+                    <input type="text" id="address" name="address">
+                    
+                    <label for="mobile">TLF:</label>
+                    <input type="tel" id="mobile" name="mobile">
+
+                    <button type="submit">Oppdater Profil</button>
+                </fieldset>
+            </form>
         </section>
     </main>
     <footer>
         <p>&copy; 2023 Shosie</p>
     </footer>
+    <script>
+        function updateProfile() {
+            const name = document.getElementById("name").value;
+            const surname = document.getElementById("surname").value;
+            document.getElementById("greeting").textContent = `Hei, ${name} ${surname}`;
+        }
+    </script>
 </body>
 </html>
